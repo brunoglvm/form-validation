@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Connect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="form">
+      <div class="title-group">
+        <h1 id="title">Dev_Connect 🌐</h1>
+        <p id="description">
+          Join the worldwide community of developers!</p>
+      </div>
+      <form id="survey-form">
+        <fieldset>
+          <div class="name-group">
+            <label id="first-name-label" for="first-name">  Name</label>
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              class="form-control"
+              placeholder="First name"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="name-group">
+            <label id="last-name-label" for="last-name"><span class="no-select">&nbsp;</span></label>
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              class="form-control"
+              placeholder="Last name"
+              required
+              autocomplete="off"
+            />
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your Email"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label id="password-label" for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label id="confirm-password-label" for="confirm-password"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            class="form-control"
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+
+        <div class="form-group checkbox-group">
+          <p>
+            Select your areas of interest
+          </p>
+          <label
+            ><input
+              name="interests"
+              value="front-end"
+              type="checkbox"
+              class="input-checkbox"
+            />Front-end</label
+          >
+          <label>
+            <input
+              name="interests"
+              value="back-end"
+              type="checkbox"
+              class="input-checkbox"
+            />Back-end</label
+          >
+          <label
+            ><input
+              name="interests"
+              value="ui-ux"
+              type="checkbox"
+              class="input-checkbox"
+            />UX/UI Design</label
+          >
+          <label
+            ><input
+              name="interests"
+              value="data-science"
+              type="checkbox"
+              class="input-checkbox"
+            />Data Science</label
+          >
+
+        <div class="form-group">
+          <p>Tell us more about yourself and what you hope to learn</p>
+          <textarea
+            id="additional-info"
+            class="input-textarea"
+            name="additional-info"
+            placeholder="Share your background, experience, and learning expectations..."
+            autocomplete="off"
+          ></textarea>
+        </div>
+
+        <div class="form-button">
+          <button type="submit" id="submit" class="submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

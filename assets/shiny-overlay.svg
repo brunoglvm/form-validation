@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="780" height="1200" preserveAspectRatio="none" viewBox="0 0 780 1200">
+    <g mask="url(&quot;#SvgjsMask1259&quot;)" fill="none">
+        <path d="M780 0L777.81 0L780 492.13z" fill="rgba(255, 255, 255, .025)"></path>
+        <path d="M777.81 0L780 492.13L780 872.05L440.47999999999996 0z" fill="rgba(255, 255, 255, .025)"></path>
+        <path d="M440.48 0L780 872.05L780 1052.94L335.25 0z" fill="rgba(255, 255, 255, .025)"></path>
+        <path d="M335.25 0L780 1052.94L780 1144.0900000000001L305.1 0z" fill="rgba(255, 255, 255, .015)"></path>
+        <path d="M0 1200L114.91 1200L0 839.9z" fill="rgba(0, 0, 0, 0.12)"></path>
+        <path d="M0 839.9L114.91 1200L350.08 1200L0 764.5z" fill="rgba(0, 0, 0, 0.09)"></path>
+        <path d="M0 764.5L350.08 1200L452.59 1200L0 704.24z" fill="rgba(0, 0, 0, 0.06)"></path>
+        <path d="M0 704.24L452.59 1200L472.16999999999996 1200L0 609.71z" fill="rgba(0, 0, 0, 0.03)"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask1259">
+            <rect width="780" height="1200" fill="#ffffff"></rect>
+        </mask>
+    </defs>
+</svg>
