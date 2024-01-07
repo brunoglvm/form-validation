@@ -6,14 +6,16 @@
 
 :root {
   --text-color: rgb(247, 253, 255);
-  --bg-url: url(./assets/bg.jpg);
+  --bg-desktop: url(./assets/bg-desktop.webp);
+  --bg-mobile: url(./assets/bg-mobile.webp);
   --shadow-color: rgba(3, 22, 40, 0.3);
 }
 
 body {
   color: var(--text-color);
-  background: var(--bg-url) no-repeat center center fixed;
+  background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 body * {
@@ -160,9 +162,9 @@ fieldset {
   transform: scale(1.03);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   body {
-    background-position: 70%;
+    background-image: var(--bg-mobile);
   }
 
   .form {
