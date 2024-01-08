@@ -164,8 +164,8 @@ fieldset {
 
 @media (max-width: 768px) {
   body {
+    min-height: 100vh;
     background-image: var(--bg-mobile);
-    background-size: cover;
   }
 
   .form {
