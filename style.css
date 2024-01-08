@@ -15,7 +15,6 @@ body {
   color: var(--text-color);
   background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 body * {
@@ -164,7 +163,6 @@ fieldset {
 
 @media (max-width: 768px) {
   body {
-    min-height: 100vh;
     background-image: var(--bg-mobile);
   }
 
