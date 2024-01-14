@@ -77,7 +77,7 @@ fieldset {
 }
 
 .form-group p {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .input-checkbox {
@@ -87,14 +87,6 @@ fieldset {
 
 .form-button {
   margin-top: 1rem;
-}
-
-::placeholder {
-  color: rgb(128, 128, 128);
-}
-
-.input-textarea::placeholder {
-  font-size: 1.125rem;
 }
 
 .form-control {
@@ -116,6 +108,14 @@ fieldset {
   margin-top: 0.1rem;
 }
 
+::placeholder {
+  color: rgb(128, 128, 128);
+}
+
+.input-textarea::placeholder {
+  font-size: 1rem;
+}
+
 .form-control,
 .input-textarea {
   padding: 6px 12px;
@@ -129,7 +129,7 @@ fieldset {
 }
 
 .checkbox-group label {
-  font-size: 1.125rem;
+  font-size: 1rem;
   padding-right: 1rem;
 }
 
@@ -159,6 +159,58 @@ fieldset {
   );
   cursor: pointer;
   transform: scale(1.03);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 26px;
+  right: 26px;
+  background-color: rgba(18, 54, 90, 0.8);
+  border-radius: 0.2rem;
+  backdrop-filter: blur(2.25px);
+  -webkit-backdrop-filter: blur(2.25px);
+  box-shadow: 0 0 12px 0 var(--shadow-color);
+  padding: 1rem;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.modal-content {
+  color: var(--text-color);
+  margin-right: 20px;
+}
+
+.close {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+}
+
+#modal-message:after {
+  content: "*";
+  color: rgb(242, 92, 93);
+  font-weight: 500;
+  display: inline-block;
+  transform: scale(1.5);
+  margin-left: 0.25rem;
+}
+
+.validation-failed-label::after {
+  content: "*";
+  color: rgb(242, 92, 93);
+  font-weight: 500;
+  display: inline-block;
+  transform: scale(1.5);
+  margin-left: 0.25rem;
+}
+
+.validation-failed-label.no-asterisk::after {
+  content: "";
 }
 
 @media (max-width: 768px) {
