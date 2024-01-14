@@ -228,4 +228,11 @@ fieldset {
     display: block;
     margin-top: 8px;
   }
+
+  .modal {
+    transform: scale(0.8);
+    left: 50%;
+    top: 3%;
+    text-align: center;
+  }
 }
