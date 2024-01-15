@@ -3,10 +3,10 @@ const form = document.querySelector("#survey-form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (validateAndHighlightLabels()) {
+  if (validateAndHighlightLabels() && validatePasswordFields()) {
     form.submit();
   } else {
-    showModal("please correct the highlighted fields");
+    showModal("Please correct the highlighted fields.");
   }
 });
 
@@ -33,6 +33,35 @@ function validateAndHighlightLabels() {
   );
 
   return !document.querySelector(".validation-failed");
+}
+
+function validatePasswordFields() {
+  const password = document.getElementById("password");
+  const passwordConfirmation = document.getElementById("confirm-password");
+
+  const passwordValidationResult = validatePassword(
+    password.value,
+    passwordConfirmation.value
+  );
+
+  if (!passwordValidationResult.valid) {
+    validateAndHighlightLabel(
+      password,
+      passwordValidationResult.minLength,
+      true
+    );
+    validateAndHighlightLabel(passwordConfirmation, true, true);
+    return false;
+  }
+
+  return true;
+}
+
+function validatePassword(password, confirmPassword) {
+  const minLength = password.length >= 8;
+  const match = password === confirmPassword;
+
+  return { valid: minLength && match, minLength };
 }
 
 function validateAndHighlightLabel(
