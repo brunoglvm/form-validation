@@ -5,8 +5,11 @@ form.addEventListener("submit", (event) => {
 
   if (validateAndHighlightLabels() && validatePasswordFields()) {
     form.submit();
-  } else {
-    showModal("Please correct the highlighted fields.");
+  } else if (
+    document.getElementById("myModal").style.display !== "block" &&
+    document.getElementById("passwordMismatchModal").style.display !== "block"
+  ) {
+    showModal("Please correct the highlighted fields");
   }
 });
 
@@ -32,7 +35,7 @@ function validateAndHighlightLabels() {
     true
   );
 
-  return !document.querySelector(".validation-failed");
+  return !document.querySelector(".validation-failed:not(#last-name)");
 }
 
 function validatePasswordFields() {
@@ -51,6 +54,7 @@ function validatePasswordFields() {
       true
     );
     validateAndHighlightLabel(passwordConfirmation, true, true);
+    showPasswordMismatchModal("Passwords do not match");
     return false;
   }
 
@@ -71,7 +75,7 @@ function validateAndHighlightLabel(
 ) {
   const labelElement = document.querySelector(`[for="${inputElement.id}"]`);
 
-  if (inputElement.value === "") {
+  if (inputElement.value === "" && inputElement.id !== "last-name") {
     inputElement.classList.add("validation-failed");
     labelElement.classList.add("validation-failed-label");
     if (
@@ -111,5 +115,29 @@ function showModal(message) {
 
   setTimeout(function () {
     modal.style.display = "none";
+  }, 5000);
+}
+
+function showPasswordMismatchModal(message) {
+  const passwordMismatchModal = document.getElementById(
+    "passwordMismatchModal"
+  );
+  const passwordMismatchMessage = document.getElementById(
+    "passwordMismatchMessage"
+  );
+
+  passwordMismatchMessage.textContent = message;
+  passwordMismatchModal.style.display = "block";
+
+  const closePasswordMismatchModalBtn = document.getElementById(
+    "closePasswordMismatchModal"
+  );
+
+  closePasswordMismatchModalBtn.onclick = function () {
+    passwordMismatchModal.style.display = "none";
+  };
+
+  setTimeout(function () {
+    passwordMismatchModal.style.display = "none";
   }, 5000);
 }
