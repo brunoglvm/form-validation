@@ -191,6 +191,11 @@ fieldset {
   right: 0.5rem;
 }
 
+.close:hover,
+.close:focus {
+  color: rgb(242, 92, 93);
+}
+
 #modal-message:after {
   content: "*";
   color: rgb(242, 92, 93);
