@@ -3,13 +3,19 @@ const form = document.querySelector("#survey-form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (validateAndHighlightLabels() && validatePasswordFields()) {
-    form.submit();
+  if (
+    validateAndHighlightLabels() &&
+    validatePasswordFields() &&
+    validateEmailField()
+  ) {
+    showConfirmationModal("!!!");
   } else if (
     document.getElementById("myModal").style.display !== "block" &&
-    document.getElementById("passwordMismatchModal").style.display !== "block"
+    document.getElementById("passwordMismatchModal").style.display !==
+      "block" &&
+    document.getElementById("emailModal").style.display !== "block"
   ) {
-    showModal("Please correct the highlighted fields");
+    showModal("Please fill in the required fields");
   }
 });
 
@@ -26,7 +32,7 @@ function validateAndHighlightLabels() {
     true
   );
   validateAndHighlightLabel(lastName, false, false);
-  validateAndHighlightLabel(email, true, true);
+  validateAndHighlightLabel(email, !isEmailValid(email.value), true);
   validateAndHighlightLabel(password, password.value.length < 8, true);
   validateAndHighlightLabel(
     passwordConfirmation,
@@ -48,11 +54,7 @@ function validatePasswordFields() {
   );
 
   if (!passwordValidationResult.valid) {
-    validateAndHighlightLabel(
-      password,
-      passwordValidationResult.minLength,
-      true
-    );
+    validateAndHighlightLabel(password, false, true);
     validateAndHighlightLabel(passwordConfirmation, true, true);
     showPasswordMismatchModal("Passwords do not match");
     return false;
@@ -62,10 +64,21 @@ function validatePasswordFields() {
 }
 
 function validatePassword(password, confirmPassword) {
-  const minLength = password.length >= 8;
   const match = password === confirmPassword;
 
-  return { valid: minLength && match, minLength };
+  return { valid: match };
+}
+
+function validateEmailField() {
+  const email = document.getElementById("email");
+
+  if (!isEmailValid(email.value)) {
+    validateAndHighlightLabel(email, true, true);
+    showEmailModal("Invalid email address");
+    return false;
+  }
+
+  return true;
 }
 
 function validateAndHighlightLabel(
@@ -139,5 +152,50 @@ function showPasswordMismatchModal(message) {
 
   setTimeout(function () {
     passwordMismatchModal.style.display = "none";
+  }, 5000);
+}
+
+function showEmailModal(message) {
+  const emailModal = document.getElementById("emailModal");
+  const emailModalMessage = document.getElementById("emailModalMessage");
+
+  emailModalMessage.textContent = message;
+  emailModal.style.display = "block";
+
+  const closeEmailModalBtn = document.getElementById("closeEmailModal");
+
+  closeEmailModalBtn.onclick = function () {
+    emailModal.style.display = "none";
+  };
+
+  setTimeout(function () {
+    emailModal.style.display = "none";
+  }, 5000);
+}
+
+function isEmailValid(email) {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+function showConfirmationModal(message) {
+  const confirmationModal = document.getElementById("confirmationModal");
+  const confirmationModalMessage = document.getElementById(
+    "confirmationModalMessage"
+  );
+
+  confirmationModalMessage.textContent = message;
+  confirmationModal.style.display = "block";
+
+  const closeConfirmationModalBtn = document.getElementById(
+    "closeConfirmationModal"
+  );
+
+  closeConfirmationModalBtn.onclick = function () {
+    confirmationModal.style.display = "none";
+  };
+
+  setTimeout(function () {
+    confirmationModal.style.display = "none";
   }, 5000);
 }
