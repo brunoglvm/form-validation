@@ -218,6 +218,39 @@ fieldset {
   content: "";
 }
 
+#confirmationModalMessage {
+  position: relative;
+  padding-left: 30px;
+}
+
+#confirmationModalMessage:before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 3%;
+  height: 16px;
+  width: 6px;
+  border-bottom: 5px solid rgb(120, 204, 99);
+  border-right: 5px solid rgb(120, 204, 99);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: checkmarkAnimation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes checkmarkAnimation {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    height: 16px;
+    width: 6px;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
 @media (max-width: 768px) {
   body {
     background-image: var(--bg-mobile);
@@ -239,5 +272,20 @@ fieldset {
     left: 50%;
     top: 3%;
     text-align: center;
+  }
+}
+
+@media (max-width: 368px) {
+  #confirmationModalMessage {
+    padding-left: 25%;
+  }
+
+  #confirmationModalMessage:before {
+    top: 50%;
+    left: 5%;
+  }
+
+  .modal {
+    left: 25%;
   }
 }
