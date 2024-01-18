@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
     validatePasswordFields() &&
     validateEmailField()
   ) {
-    showConfirmationModal("!!!");
+    showConfirmationModal("Registration completed!");
   } else if (
     document.getElementById("myModal").style.display !== "block" &&
     document.getElementById("passwordMismatchModal").style.display !==
