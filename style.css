@@ -233,22 +233,6 @@ fieldset {
   border-bottom: 5px solid rgb(120, 204, 99);
   border-right: 5px solid rgb(120, 204, 99);
   transform: translate(-50%, -50%) rotate(45deg);
-  animation: checkmarkAnimation 0.5s ease-in-out;
-}
-
-@keyframes checkmarkAnimation {
-  0% {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    height: 16px;
-    width: 6px;
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
 }
 
 @media (max-width: 768px) {
@@ -275,17 +259,14 @@ fieldset {
   }
 }
 
-@media (max-width: 368px) {
-  #confirmationModalMessage {
-    padding-left: 25%;
-  }
-
-  #confirmationModalMessage:before {
-    top: 50%;
-    left: 5%;
-  }
-
+@media (max-width: 375px) {
   .modal {
-    left: 25%;
+    left: 35%;
+  }
+}
+
+@media (max-width: 280px) {
+  .modal {
+    left: 20%;
   }
 }
