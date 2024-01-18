@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev Connect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="form">
       <div class="title-group">
         <h1 id="title">Dev_Connect 🌐</h1>
-        <p id="description">
-          Join the worldwide community of developers!</p>
+        <p id="description">Join the worldwide community of developers!</p>
       </div>
       <form id="survey-form">
         <fieldset>
@@ -32,7 +34,9 @@
           </div>
 
           <div class="name-group">
-            <label id="last-name-label" for="last-name"><span class="no-select">&nbsp;</span></label>
+            <label id="last-name-label" for="last-name"
+              ><span class="no-select">&nbsp;</span></label
+            >
             <input
               type="text"
               name="last-name"
@@ -81,10 +85,8 @@
         </div>
 
         <div class="form-group checkbox-group">
-          <p>
-            Select your areas of interest
-          </p>
-          <label for="front-end"    
+          <p>Select your areas of interest</p>
+          <label for="front-end"
             ><input
               name="interests"
               value="front-end"
@@ -94,7 +96,7 @@
             />Front-end</label
           >
           <label for="back-end"
-          ><input
+            ><input
               name="interests"
               value="back-end"
               type="checkbox"
@@ -102,7 +104,7 @@
               class="input-checkbox"
             />Back-end</label
           >
-          <label for="ui-ux" 
+          <label for="ui-ux"
             ><input
               name="interests"
               value="ui-ux"
@@ -120,6 +122,7 @@
               class="input-checkbox"
             />Data Science</label
           >
+        </div>
 
         <div class="form-group">
           <p>Tell us more about yourself and what you hope to learn</p>
@@ -139,24 +142,29 @@
         </div>
       </form>
     </section>
-    
+
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span id="closeMyModal" class="close">&times;</span>
         <p id="modal-message"></p>
       </div>
     </div>
-    
+
     <div id="emailModal" class="modal">
       <div class="modal-content">
         <span id="closeEmailModal" class="close">&times;</span>
         <p id="emailModalMessage"></p>
       </div>
-    </div>  
-    
+    </div>
+
     <div id="passwordMismatchModal" class="modal">
       <div class="modal-content">
-        <span id="closePasswordMismatchModal" class="close" onclick="closePasswordMismatchModal()">&times;</span>
+        <span
+          id="closePasswordMismatchModal"
+          class="close"
+          onclick="closePasswordMismatchModal()"
+          >&times;</span
+        >
         <p id="passwordMismatchMessage"></p>
       </div>
     </div>
@@ -167,7 +175,7 @@
         <p id="confirmationModalMessage"></p>
       </div>
     </div>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
