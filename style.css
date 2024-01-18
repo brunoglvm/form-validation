@@ -233,10 +233,12 @@ fieldset {
   border-bottom: 5px solid rgb(120, 204, 99);
   border-right: 5px solid rgb(120, 204, 99);
   transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-animation: checkmarkAnimation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)
+    forwards;
   animation: checkmarkAnimation 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
-@keyframes checkmarkAnimation {
+@-webkit-keyframes checkmarkAnimation {
   0% {
     height: 0;
     width: 0;
