@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overscroll-behavior: none;
 }
 
 :root {
@@ -12,6 +11,7 @@
 }
 
 body {
+  overscroll-behavior: none;
   color: var(--text-color);
   background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
