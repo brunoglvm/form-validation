@@ -10,14 +10,11 @@
   --shadow-color: rgba(3, 22, 40, 0.3);
 }
 
-html {
-  overscroll-behavior: none;
-}
-
 body {
   color: var(--text-color);
   background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
+  overscroll-behavior: none !important;
 }
 
 body * {
