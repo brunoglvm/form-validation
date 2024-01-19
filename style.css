@@ -7,7 +7,6 @@
 :root {
   --text-color: rgb(247, 253, 255);
   --bg-desktop: url(./assets/bg-desktop.webp);
-  --bg-mobile: url(./assets/bg-mobile.webp);
   --shadow-color: rgba(3, 22, 40, 0.3);
 }
 
@@ -237,7 +236,10 @@ fieldset {
 
 @media (max-width: 768px) {
   body {
-    background-image: var(--bg-mobile);
+    background-image: url(./assets/bg-mobile.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
     background-size: cover;
   }
 
