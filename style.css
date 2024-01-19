@@ -14,7 +14,6 @@ body {
   color: var(--text-color);
   background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
-  background-color: rgb(25, 67, 107);
   overscroll-behavior: none;
 }
 
