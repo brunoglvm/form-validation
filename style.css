@@ -238,12 +238,14 @@ fieldset {
 @media (max-width: 768px) {
   body {
     background-image: var(--bg-mobile);
+    background-size: cover;
   }
 
   .form {
     min-height: 100vh;
     border-radius: 0;
     margin: auto;
+    background-size: cover;
   }
 
   .checkbox-group label {
