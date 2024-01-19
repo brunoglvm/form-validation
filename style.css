@@ -2,16 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overscroll-behavior: none;
 }
 
 :root {
   --text-color: rgb(247, 253, 255);
   --bg-desktop: url(./assets/bg-desktop.webp);
   --shadow-color: rgba(3, 22, 40, 0.3);
-}
-
-html {
-  overscroll-behavior: none !important;
 }
 
 body {
