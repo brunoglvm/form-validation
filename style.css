@@ -14,6 +14,7 @@ body {
   color: var(--text-color);
   background: var(--bg-desktop) no-repeat center center fixed;
   background-size: cover;
+  overscroll-behavior: none;
 }
 
 body * {
@@ -241,8 +242,6 @@ fieldset {
     background-position: center top;
     background-attachment: scroll;
     background-size: cover;
-    overscroll-behavior: contain;
-    background-color: rgba(18, 54, 90, 0.6);
   }
 
   .form {
