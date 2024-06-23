@@ -123,9 +123,15 @@ fieldset {
 }
 
 .form-control:focus,
-.input-textarea:focus {
+.input-textarea:focus,
+.input-checkbox:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgb(62, 130, 198), 0 0 0 4px rgb(90, 173, 218);
+}
+
+.submit-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(49, 121, 46), 0 0 0 4px rgb(250, 255, 247);
 }
 
 .checkbox-group label {
