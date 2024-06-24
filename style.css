@@ -124,7 +124,7 @@ fieldset {
 
 .form-control:focus,
 .input-textarea:focus,
-.input-checkbox:focus {
+.input-checkbox:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px rgb(62, 130, 198), 0 0 0 4px rgb(90, 173, 218);
 }
@@ -167,7 +167,7 @@ fieldset {
   transform: scale(1.03);
 }
 
-.modal {
+.toast {
   display: none;
   position: fixed;
   top: 26px;
@@ -182,27 +182,11 @@ fieldset {
   font-weight: 500;
 }
 
-.modal-content {
+.toast-content {
   color: var(--text-color);
-  margin-right: 20px;
 }
 
-.close {
-  color: var(--text-color);
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0.5rem;
-}
-
-.close:hover,
-.close:focus {
-  color: rgb(242, 92, 93);
-}
-
-#modal-message:after {
+#toastMessage:after {
   content: "*";
   color: rgb(242, 92, 93);
   font-weight: 500;
@@ -224,12 +208,12 @@ fieldset {
   content: "";
 }
 
-#confirmationModalMessage {
+#confirmationToastMessage {
   position: relative;
   padding-left: 30px;
 }
 
-#confirmationModalMessage:before {
+#confirmationToastMessage:before {
   content: "";
   position: absolute;
   top: 40%;

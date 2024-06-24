@@ -1,21 +1,21 @@
 const form = document.querySelector("#survey-form");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
   if (
     validateAndHighlightLabels() &&
     validatePasswordFields() &&
     validateEmailField()
   ) {
-    showConfirmationModal("Registration completed!");
+    showConfirmationToast("Registration completed!");
   } else if (
-    document.getElementById("myModal").style.display !== "block" &&
-    document.getElementById("passwordMismatchModal").style.display !==
+    document.getElementById("myToast").style.display !== "block" &&
+    document.getElementById("passwordMismatchToast").style.display !==
       "block" &&
-    document.getElementById("emailModal").style.display !== "block"
+    document.getElementById("emailToast").style.display !== "block"
   ) {
-    showModal("Please fill in the required fields");
+    showToast("Please fill in the required fields");
   }
 });
 
@@ -56,7 +56,7 @@ function validatePasswordFields() {
   if (!passwordValidationResult.valid) {
     validateAndHighlightLabel(password, false, true);
     validateAndHighlightLabel(passwordConfirmation, true, true);
-    showPasswordMismatchModal("Passwords do not match");
+    showPasswordMismatchToast("Passwords do not match");
     return false;
   }
 
@@ -64,9 +64,7 @@ function validatePasswordFields() {
 }
 
 function validatePassword(password, confirmPassword) {
-  const match = password === confirmPassword;
-
-  return { valid: match };
+  return { valid: password === confirmPassword };
 }
 
 function validateEmailField() {
@@ -74,7 +72,7 @@ function validateEmailField() {
 
   if (!isEmailValid(email.value)) {
     validateAndHighlightLabel(email, true, true);
-    showEmailModal("Invalid email address");
+    showEmailToast("Invalid email address");
     return false;
   }
 
@@ -106,96 +104,68 @@ function validateAndHighlightLabel(
   }
 }
 
+function isEmailValid(email) {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+function showToast(message) {
+  const toast = document.getElementById("myToast");
+  const toastMessage = document.getElementById("toastMessage");
+
+  toastMessage.textContent = message;
+  toast.style.display = "block";
+
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 5000);
+}
+
+function showPasswordMismatchToast(message) {
+  const passwordMismatchToast = document.getElementById(
+    "passwordMismatchToast"
+  );
+  const passwordMismatchMessage = document.getElementById(
+    "passwordMismatchToastMessage"
+  );
+
+  passwordMismatchMessage.textContent = message;
+  passwordMismatchToast.style.display = "block";
+
+  setTimeout(() => {
+    passwordMismatchToast.style.display = "none";
+  }, 5000);
+}
+
+function showEmailToast(message) {
+  const emailToast = document.getElementById("emailToast");
+  const emailToastMessage = document.getElementById("emailToastMessage");
+
+  emailToastMessage.textContent = message;
+  emailToast.style.display = "block";
+
+  setTimeout(() => {
+    emailToast.style.display = "none";
+  }, 5000);
+}
+
+function showConfirmationToast(message) {
+  const confirmationToast = document.getElementById("confirmationToast");
+  const confirmationToastMessage = document.getElementById(
+    "confirmationToastMessage"
+  );
+
+  confirmationToastMessage.textContent = message;
+  confirmationToast.style.display = "block";
+
+  setTimeout(() => {
+    confirmationToast.style.display = "none";
+  }, 5000);
+}
+
 const formInputs = form.querySelectorAll("input");
 formInputs.forEach((input) => {
   input.addEventListener("input", () => {
     validateAndHighlightLabel(input, true, true);
   });
 });
-
-function showModal(message) {
-  const modal = document.getElementById("myModal");
-  const modalMessage = document.getElementById("modal-message");
-
-  modalMessage.textContent = message;
-  modal.style.display = "block";
-
-  const span = document.getElementsByClassName("close")[0];
-
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  setTimeout(function () {
-    modal.style.display = "none";
-  }, 5000);
-}
-
-function showPasswordMismatchModal(message) {
-  const passwordMismatchModal = document.getElementById(
-    "passwordMismatchModal"
-  );
-  const passwordMismatchMessage = document.getElementById(
-    "passwordMismatchMessage"
-  );
-
-  passwordMismatchMessage.textContent = message;
-  passwordMismatchModal.style.display = "block";
-
-  const closePasswordMismatchModalBtn = document.getElementById(
-    "closePasswordMismatchModal"
-  );
-
-  closePasswordMismatchModalBtn.onclick = function () {
-    passwordMismatchModal.style.display = "none";
-  };
-
-  setTimeout(function () {
-    passwordMismatchModal.style.display = "none";
-  }, 5000);
-}
-
-function showEmailModal(message) {
-  const emailModal = document.getElementById("emailModal");
-  const emailModalMessage = document.getElementById("emailModalMessage");
-
-  emailModalMessage.textContent = message;
-  emailModal.style.display = "block";
-
-  const closeEmailModalBtn = document.getElementById("closeEmailModal");
-
-  closeEmailModalBtn.onclick = function () {
-    emailModal.style.display = "none";
-  };
-
-  setTimeout(function () {
-    emailModal.style.display = "none";
-  }, 5000);
-}
-
-function isEmailValid(email) {
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-}
-
-function showConfirmationModal(message) {
-  const confirmationModal = document.getElementById("confirmationModal");
-  const confirmationModalMessage = document.getElementById(
-    "confirmationModalMessage"
-  );
-
-  confirmationModalMessage.textContent = message;
-  confirmationModal.style.display = "block";
-
-  const closeConfirmationModalBtn = document.getElementById(
-    "closeConfirmationModal"
-  );
-
-  closeConfirmationModalBtn.onclick = function () {
-    confirmationModal.style.display = "none";
-  };
-
-  setTimeout(function () {
-    confirmationModal.style.display = "none";
-  }, 5000);
-}

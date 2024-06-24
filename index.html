@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev_Connect</title>
+
+    <link rel="stylesheet" href="style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="form">
@@ -143,36 +145,27 @@
       </form>
     </section>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span id="closeMyModal" class="close">&times;</span>
-        <p id="modal-message"></p>
+    <div id="myToast" class="toast">
+      <div class="toast-content">
+        <p id="toastMessage"></p>
       </div>
     </div>
 
-    <div id="emailModal" class="modal">
-      <div class="modal-content">
-        <span id="closeEmailModal" class="close">&times;</span>
-        <p id="emailModalMessage"></p>
+    <div id="emailToast" class="toast">
+      <div class="toast-content">
+        <p id="emailToastMessage"></p>
       </div>
     </div>
 
-    <div id="passwordMismatchModal" class="modal">
-      <div class="modal-content">
-        <span
-          id="closePasswordMismatchModal"
-          class="close"
-          onclick="closePasswordMismatchModal()"
-          >&times;</span
-        >
-        <p id="passwordMismatchMessage"></p>
+    <div id="passwordMismatchToast" class="toast">
+      <div class="toast-content">
+        <p id="passwordMismatchToastMessage"></p>
       </div>
     </div>
 
-    <div id="confirmationModal" class="modal">
-      <div class="modal-content">
-        <span id="closeConfirmationModal" class="close">&times;</span>
-        <p id="confirmationModalMessage"></p>
+    <div id="confirmationToast" class="toast">
+      <div class="toast-content">
+        <p id="confirmationToastMessage"></p>
       </div>
     </div>
 
